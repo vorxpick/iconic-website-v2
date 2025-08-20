@@ -58,52 +58,11 @@ function checkWinnerTTT(){
   return false;
 }
 
-// Smarter computer AI
 function computerMoveTTT(){
-  if(!gameActive) return;
-
-  // 1. Win if possible
-  let winMove = findBestMove(computer);
-  if(winMove !== null){ makeMove(winMove, computer); return; }
-
-  // 2. Block player
-  let blockMove = findBestMove(player);
-  if(blockMove !== null){ makeMove(blockMove, computer); return; }
-
-  // 3. Take center
-  if(tttState[4]===''){ makeMove(4, computer); return; }
-
-  // 4. Take a corner
-  const corners=[0,2,6,8].filter(i=>tttState[i]==='');
-  if(corners.length>0){
-    let randCorner=corners[Math.floor(Math.random()*corners.length)];
-    makeMove(randCorner, computer);
-    return;
-  }
-
-  // 5. Take any side
-  const sides=[1,3,5,7].filter(i=>tttState[i]==='');
-  if(sides.length>0){
-    let randSide=sides[Math.floor(Math.random()*sides.length)];
-    makeMove(randSide, computer);
-  }
-}
-
-function findBestMove(symbol){
-  const winCond=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
-  for(let c of winCond){
-    let [a,b,cIdx]=c;
-    let line=[tttState[a],tttState[b],tttState[cIdx]];
-    if(line.filter(v=>v===symbol).length===2 && line.includes('')){
-      return [a,b,cIdx][line.indexOf('')];
-    }
-  }
-  return null;
-}
-
-function makeMove(idx, symbol){
-  tttState[idx]=symbol;
-  tttBoard.children[idx].textContent=symbol;
+  let empty=tttState.map((v,i)=>v===''?i:null).filter(v=>v!==null);
+  let rand=empty[Math.floor(Math.random()*empty.length)];
+  tttState[rand]=computer;
+  tttBoard.children[rand].textContent=computer;
   checkWinnerTTT();
 }
 
