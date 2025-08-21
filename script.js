@@ -94,24 +94,12 @@ tttReset.addEventListener('click',()=>{
 
 createTTTBoard();
 
-// ============================
-// Skill Modal Functionality
-// ============================
+// Skill Modal
 const skills = document.querySelectorAll('.skills-list li');
-const modal = document.createElement('div');
-modal.classList.add('modal');
-modal.innerHTML = `
-  <div class="modal-content">
-    <h3 id="modal-title"></h3>
-    <p id="modal-desc"></p>
-    <button class="close-btn">Close</button>
-  </div>
-`;
-document.body.appendChild(modal);
-
+const modal = document.getElementById('skill-modal');
 const modalTitle = document.getElementById('modal-title');
-const modalDesc = document.getElementById('modal-desc');
-const closeBtn = modal.querySelector('.close-btn');
+const modalDesc = document.getElementById('modal-description');
+const closeBtn = document.getElementById('close-modal');
 
 const skillDescriptions = {
   "HTML & CSS": "I can build responsive, visually appealing websites using HTML for structure and CSS for design and animations.",
