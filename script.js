@@ -93,3 +93,42 @@ tttReset.addEventListener('click',()=>{
 });
 
 createTTTBoard();
+
+// ============================
+// Skill Modal Functionality
+// ============================
+const skills = document.querySelectorAll('.skills-list li');
+const modal = document.createElement('div');
+modal.classList.add('modal');
+modal.innerHTML = `
+  <div class="modal-content">
+    <h3 id="modal-title"></h3>
+    <p id="modal-desc"></p>
+    <button class="close-btn">Close</button>
+  </div>
+`;
+document.body.appendChild(modal);
+
+const modalTitle = document.getElementById('modal-title');
+const modalDesc = document.getElementById('modal-desc');
+const closeBtn = modal.querySelector('.close-btn');
+
+const skillDescriptions = {
+  "HTML & CSS": "I can build responsive, visually appealing websites using HTML for structure and CSS for design and animations.",
+  "JavaScript & DOM Manipulation": "I use JavaScript to create interactive websites, control elements dynamically, and make games like Tic Tac Toe and RPS.",
+  "Responsive Web Design": "I ensure websites look great on any device using media queries, flexible layouts, and modern design principles.",
+  "Content Creation & Tutorials": "I create tutorials and guides that teach others how to build websites, make games, and explore creative coding."
+};
+
+skills.forEach(skill => {
+  skill.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    modalTitle.textContent = skill.textContent;
+    modalDesc.textContent = skillDescriptions[skill.textContent] || 'Description coming soon!';
+  });
+});
+
+closeBtn.addEventListener('click', () => modal.style.display = 'none');
+modal.addEventListener('click', e => {
+  if(e.target === modal) modal.style.display = 'none';
+});

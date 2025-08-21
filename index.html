@@ -61,12 +61,21 @@
   <section id="skills">
     <h2>Tools & Skills</h2>
     <ul class="skills-list">
-      <li>HTML & CSS</li>
-      <li>JavaScript & DOM Manipulation</li>
-      <li>Responsive Web Design</li>
-      <li>Content Creation & Tutorials</li>
+      <li class="skill" data-skill="htmlcss">HTML & CSS</li>
+      <li class="skill" data-skill="javascript">JavaScript & DOM Manipulation</li>
+      <li class="skill" data-skill="responsive">Responsive Web Design</li>
+      <li class="skill" data-skill="content">Content Creation & Tutorials</li>
     </ul>
   </section>
+
+  <!-- Popup Modal -->
+  <div id="skill-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="close-modal">&times;</span>
+      <h3 id="modal-title"></h3>
+      <p id="modal-description"></p>
+    </div>
+  </div>
 
   <section id="projects">
     <h2>Projects</h2>
