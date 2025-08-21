@@ -27,39 +27,35 @@
 </nav>
 
 <main>
-  <section id="about">
+  <section id="about" class="section-center">
     <h2>About Me</h2>
     <p>
       Hello! I’m Iconic Ahmed, a web developer focused on HTML, CSS, and JavaScript. I enjoy making Minecraft videos and tutorials to help other people. I am a Minecraft veteran and my username is Iconic Ahmed.
     </p>
   </section>
 
-  <!-- YouTube / About Me Section -->
-  <section id="youtube" style="text-align:center; margin-top:3rem;">
+  <section id="youtube" class="youtube-about section-center">
     <h2>🎥 About My YouTube Journey</h2>
-    <p style="color:#bbb; max-width:700px; margin:auto; line-height:1.6;">
+    <p>
       Hey! I'm Ahmed, also known as <strong>Iconic Ahmed</strong>.  
       I make fun and easy-to-follow <strong>Minecraft tutorials</strong> that help players 
       build creative worlds, survive longer, and discover cool tricks.  
-      My goal is to inspire new builders and gamers with clear guides and exciting content.  
+      My goal is to inspire new builders and gamers with clear guides and exciting content.
     </p>
 
-    <!-- YouTube Subscribe Button -->
-    <div style="margin: 1.5rem 0;">
-      <a href="https://www.youtube.com/@Iconicahmed7?sub_confirmation=1" target="_blank" 
-         style="display:inline-block; padding:12px 24px; background:#ff0000; color:#fff; 
-                border-radius:8px; font-weight:bold; text-decoration:none; font-size:1.1rem;">
+    <div class="subscribe-container">
+      <a href="https://www.youtube.com/@Iconicahmed7?sub_confirmation=1" class="subscribe-btn">
         🔔 Subscribe on YouTube
       </a>
     </div>
 
-    <p style="color:#aaa; max-width:650px; margin:auto; font-style:italic;">
+    <p class="youtube-italic">
       Join me on my journey as I explore Minecraft, share creative ideas, and 
       help the community grow one block at a time!
     </p>
   </section>
 
-  <section id="skills">
+  <section id="skills" class="section-center">
     <h2>Tools & Skills</h2>
     <ul class="skills-list">
       <li class="skill" data-skill="htmlcss">HTML & CSS</li>
@@ -78,7 +74,7 @@
     </div>
   </div>
 
-  <section id="projects">
+  <section id="projects" class="section-center">
     <h2>Projects</h2>
     <ul class="projects-list">
       <li><strong>Portfolio Website:</strong> Interactive website with animations and custom cursor.</li>
@@ -87,35 +83,32 @@
     </ul>
   </section>
 
-  <!-- External Page Link Section -->
-  <section id="other-pages" style="text-align:center;">
+  <section id="other-pages" class="section-center">
     <h2>Explore My Other Pages</h2>
-    <p style="color:#bbb;">Click the button below to visit one of my other creations!</p>
-    <a href="otherpage.html" target="_blank" class="my-button">
+    <p>Click the button below to visit one of my other creations!</p>
+    <a href="otherpage.html" class="my-button">
       🌐 Visit My Other Page
     </a>
   </section>
 
-  <!-- Rock Paper Scissors -->
-  <section id="rock-paper-scissors" style="text-align:center;">
+  <section id="rock-paper-scissors" class="section-center">
     <h2>Rock, Paper, Scissors</h2>
-    <p style="color:#bbb;">Choose your move and see if you can beat the computer!</p>
-    <div style="margin-top:1rem;">
+    <p>Choose your move and see if you can beat the computer!</p>
+    <div class="rps-buttons">
       <button class="rps-btn" onclick="playRPS('rock')">✊ Rock</button>
       <button class="rps-btn" onclick="playRPS('paper')">✋ Paper</button>
       <button class="rps-btn" onclick="playRPS('scissors')">✌ Scissors</button>
     </div>
-    <p id="rps-result" style="margin-top:1rem;color:#00adee;font-weight:bold;"></p>
-    <p id="rps-score" style="color:#bbb;">You: 0 | Computer: 0</p>
+    <p id="rps-result" class="game-result"></p>
+    <p id="rps-score" class="game-score">You: 0 | Computer: 0</p>
   </section>
 
-  <!-- Tic Tac Toe Game Section -->
-  <section id="tic-tac-toe" style="text-align:center;">
+  <section id="tic-tac-toe" class="section-center">
     <h2>Tic Tac Toe</h2>
-    <p style="color:#bbb;">Play against the computer!</p>
+    <p>Play against the computer!</p>
     <div class="ttt-board" id="ttt-board"></div>
-    <p id="ttt-result" style="margin-top:1rem;color:#00adee;font-weight:bold;"></p>
-    <button id="ttt-reset" class="rps-btn" style="margin-top:1rem;">Restart Game</button>
+    <p id="ttt-result" class="game-result"></p>
+    <button id="ttt-reset" class="rps-btn">Restart Game</button>
   </section>
 
 </main>
